@@ -24,4 +24,4 @@ python3 -m pip install --ignore-installed blinker
 wget $MODEL_URL -O $MODEL_SAVE_PATH
 
 # Run the application
-python3 ./app.py
+python3 ./server.py
