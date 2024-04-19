@@ -14,17 +14,8 @@ if ! command -v python3 &> /dev/null; then
     exit
 fi
 
-# Clone the repository
-git clone $GIT_REPO_URL
-cd $(basename $GIT_REPO_URL .git)
-
-# Checkout the specific branch, if not the default branch
-if [ "$BRANCH_NAME" != "main" ]; then
-    git checkout $BRANCH_NAME
-fi
-
 # Install requirements using pip
-python3 -m pip install -r requirements.txt
+python3 -m pip install -r ./requirements.txt
 
 # Fix for blinker installation, if needed
 python3 -m pip install --ignore-installed blinker
@@ -33,4 +24,4 @@ python3 -m pip install --ignore-installed blinker
 wget $MODEL_URL -O $MODEL_SAVE_PATH
 
 # Run the application
-python3 app.py
+python3 ./app.py
