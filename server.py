@@ -1,6 +1,7 @@
 from PIL import Image
 from segment_anything import SamPredictor, sam_model_registry
 from io import BytesIO
+import flask
 
 # Initialize the model
 sam = sam_model_registry["vit_h"](checkpoint="sam_vit_h_4b8939.pth")
