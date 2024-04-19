@@ -14,11 +14,12 @@ if ! command -v python3 &> /dev/null; then
     exit
 fi
 
+# Fix for blinker installation, if needed
+python3 -m pip install --ignore-installed blinker
+
 # Install requirements using pip
 python3 -m pip install -r ./requirements.txt
 
-# Fix for blinker installation, if needed
-python3 -m pip install --ignore-installed blinker
 
 # Download the model file using wget
 wget $MODEL_URL -O $MODEL_SAVE_PATH
